@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO2</title>
+
+    <style>
+        
+    </style>
+
+</head>
+
+<body>
+
+<div class="container" style="background-color: lightblue; width: 400px; text-align: center; padding: 10px; border-top: 5px solid darkblue; border-radius: 20px; margin: auto;">
+        <form id="form">
+            <h2>CALCULATOR</h2>
+            <div class="input-group" style="margin: 7px; border-radius: 10px;">
+                <label for="num1">1st Number: </label> <br>
+                <input type="number" id="num1" required> <br>
+            </div>
+            <div class="input-group" style="margin: 7px; border-radius: 10px;">
+                <label for="num2">2nd Number: </label> <br>
+                <input type="number" id="num2" required> <br>
+            </div>
+            <select id="results" style="margin: 7px; border-radius: 10px;">
+                <option id="ADD">ADD</option>
+                <option id="SUBTRACT">SUBTRACT</option>
+                <option id="MULTIPLY">MULTIPLY</option>
+                <option id="DIVISION">DIVISION</option>
+            </select>
+            <br>
+            <button onclick="display()">RESULT</button>
+        </form>
+</div>
+
+
+    
+    <script>
+        function display(){
+            let num1 = Number (document.getElementById("num1").value);
+            let num2 = Number (document.getElementById("num2").value);
+            let operation = (document.getElementById("results").value);
+            let result;
+
+            if (operation == "ADD"){
+                result = num1 + num2;
+            }
+            else if (operation == "SUBTRACT"){
+                result = num1 - num2;
+            }
+            else if (operation == "MULTIPLY"){
+                result = num1 * num2;
+            }
+            else if (operation == "DIVIDE"){
+                if (num2 == 0){
+                    alert("Cannot Divide By ZERO");
+                    return;
+                }
+                result = num1 / num2;
+            }
+
+            alert("The Result is: " + result);
+
+        }
+    </script>
+</body>
+</html>
